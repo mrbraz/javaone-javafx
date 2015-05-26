@@ -1,0 +1,49 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>io.github.mrbraz</groupId>
+  <artifactId>javafx-javaone</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>JavaFX Project designed to JavaOne Latam 2015</name>
+  
+  <properties>
+    <java.compiler.version>1.8</java.compiler.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <jersey.version>2.4</jersey.version>
+    <jackson.version>1.9.11</jackson.version>
+    <javafx.url>${java.home}/lib/ext/jfxrt.jar</javafx.url>
+  </properties>
+  
+  <dependencies>
+    <dependency>
+      <groupId>com.google.inject</groupId>
+      <artifactId>guice</artifactId>
+      <version>3.0</version>
+    </dependency>
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>1.2.17</version>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle</groupId>
+      <artifactId>javafx</artifactId>
+      <version>8</version>
+      <systemPath>${javafx.url}</systemPath>
+      <scope>system</scope>
+    </dependency>
+  </dependencies>
+  
+  <build>
+    <plugins>
+      <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.0</version>
+          <configuration>
+            <source>${java.compiler.version}</source>
+            <target>${java.compiler.version}</target>
+          </configuration>
+        </plugin>
+    </plugins>
+  </build>
+</project>
