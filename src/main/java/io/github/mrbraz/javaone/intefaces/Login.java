@@ -1,8 +1,7 @@
 package io.github.mrbraz.javaone.intefaces;
 
-import io.github.mrbraz.framework.infra.FXController;
-import io.github.mrbraz.framework.infra.ioc.Container;
-import io.github.mrbraz.framework.interfaces.Controller;
+import io.github.mrbraz.javaone.intefaces.LoginPresenter.LoginView;
+import javafx.beans.property.StringProperty;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -11,9 +10,13 @@ import javafx.scene.control.TextField;
 
 import javax.inject.Singleton;
 
-@FXController
+import reactfx.infra.FXView;
+import reactfx.infra.ioc.ApplicationContext;
+import reactfx.interfaces.ViewBase;
+
 @Singleton
-public class Login extends Controller {
+@FXView
+class Login extends ViewBase implements LoginView {
 	@FXML
 	private TextField username;
 	@FXML
@@ -24,7 +27,7 @@ public class Login extends Controller {
 	private Label message;
 	
 	public static Login create(){
-	  return Container.instanceOf(Login.class);
+	  return ApplicationContext.instanceOf(Login.class);
 	}
 	
 	@FXML
@@ -41,5 +44,15 @@ public class Login extends Controller {
 	@FXML
 	private void handleCancel() {
 		System.exit(0);
+	}
+	
+	@Override
+	public StringProperty username() {
+	  return this.username.textProperty();
+	}
+	
+	@Override
+	public StringProperty password() {
+	  return this.password.textProperty();
 	}
 }

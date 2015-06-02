@@ -1,9 +1,9 @@
 package io.github.mrbraz.javaone.application;
 
-import io.github.mrbraz.framework.infra.ioc.ExtendedModule;
-import io.github.mrbraz.framework.infra.ioc.FXModule;
-
 import java.util.ResourceBundle;
+
+import reactfx.infra.ioc.ExtendedModule;
+import reactfx.infra.ioc.FXModule;
 
 public class ApplicationModule extends ExtendedModule {
 
