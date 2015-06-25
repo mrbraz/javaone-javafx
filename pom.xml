@@ -15,14 +15,15 @@
     <reflections.version>0.9.10</reflections.version>
     <log4j.version>1.2.17</log4j.version>
     <javafx.url>${java.home}/lib/ext/jfxrt.jar</javafx.url>
-    <reactfx.version>0.0.1-SNAPSHOT</reactfx.version>
+    <reactivefx.version>0.0.1-SNAPSHOT</reactivefx.version>
+    <reflections.version>0.9.9-RC2</reflections.version>
   </properties>
   
   <dependencies>
     <dependency>
       <groupId>io.github.mrbraz</groupId>
-      <artifactId>reactfx</artifactId>
-      <version>${reactfx.version}</version>
+      <artifactId>reactivefx</artifactId>
+      <version>${reactivefx.version}</version>
     </dependency>
     <dependency>
       <groupId>com.google.inject</groupId>
@@ -40,6 +41,12 @@
       <version>${java.compiler.version}</version>
       <systemPath>${javafx.url}</systemPath>
       <scope>system</scope>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 
